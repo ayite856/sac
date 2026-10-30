@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+   <header class="site-header">
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            
+            <!-- Informations de contact (Colonne de gauche) -->
+            <div class="contact-info">
+                <h2>Restons en contact</h2>
+                <p>Une question sur nos produits de lessive Omo, nos sacs de shopping ou nos formations ? N'hésitez pas à nous écrire !</p>
+                
+                <div class="info-item">
+                    <span>📧</span>
+                    <p><strong>Email :</strong> yxty@gmail.com</p>
+                </div>
+                
+                <div class="info-item">
+                    <span>📞</span>
+                    <p><strong>Téléphone / WhatsApp :</strong> +228 00 00 00 00</p>
+                </div>
+                
+                <div class="info-item">
+                    <span>📍</span>
+                    <p><strong>Adresse :</strong> Lomé, Togo</p>
+                </div>
+            </div>
+
+            <!-- Formulaire de contact (Colonne de droite) -->
+            <div class="contact-form">
+                <h1>Contactez-nous</h1>
+                <form action="submit_form.php" method="post">
+                    
+                    <div class="form-group">
+                        <label for="name">Nom complet *</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse Email *</label>
+                        <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Téléphone / WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+228 ...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Objet de votre message</label>
+                        <select id="subject" name="subject">
+                            <option value="achat">Achat de produits (Omo / Sacs)</option>
+                            <option value="formation">Inscription à une Formation</option>
+                            <option value="partenariat">Partenariat / Autres</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Envoyer le message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,575 @@
+body {
+    background: linear-gradient(-45deg, #007bff, #00c6ff, #f39c12, #e67e22);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Réinitialisation de base pour éviter les marges de l'écran */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Style de l'en-tête (Header) */
+.site-header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Barre de navigation */
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-end; /* Aligne le menu à droite (utilisez 'center' ou 'space-between' si vous préférez) */
+    align-items: center;
+}
+
+/* Liste des liens */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Espace régulier entre chaque lien */
+}
+
+/* Style des liens */
+.nav-links a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Effet au survol */
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Petit soulignement dynamique au survol */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- SECTION HERO (ACCUEIL) --- */
+.hero-section {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('votre-image-fond.jpg') no-repeat center / cover; /* Remplacez par le chemin de votre image de fond */
+    color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00c6ff;
+}
+
+.hero-tagline {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+/* Grille des points forts */
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.hero-features span {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+}
+
+.hero-call {
+    font-size: 15px;
+    font-style: italic;
+    color: #d1ecf1;
+    margin-bottom: 35px;
+}
+
+/* Bouton principal stylisé */
+.btn-primary {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* --- FOOTER --- */
+.mon-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.mon-footer p {
+    margin: 0;
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+.footer-liens {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.footer-liens a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-liens a:hover {
+    color: #007bff;
+}
+
+/* Adaptation pour les écrans PC (Footer en ligne) */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+body {
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Section principale */
+.contact-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Carte principale réunissant les deux blocs */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Bloc d'informations à gauche */
+.contact-info {
+    flex: 1 1 350px;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: #ffffff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.info-item span {
+    font-size: 20px;
+}
+
+.socials a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Formulaire à droite */
+.contact-form {
+    flex: 1 1 450px;
+    padding: 40px;
+}
+
+.contact-form h1 {
+    margin-top: 0;
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+}
+
+/* Bouton d'envoi */
+.btn-submit {
+    width: 100%;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Adaptabilité mobile */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+/* --- SECTION SERVICES --- */
+.services-section {
+    padding: 60px 20px;
+    background-color: #f9fbfd;
+    text-align: center;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+/* Grille responsive pour les images */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Carte individuelle pour chaque image */
+.service-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Évite la déformation des images */
+    display: block;
+}
+
+.card-desc {
+    padding: 15px;
+    font-weight: 600;
+    color: #444444;
+    font-size: 15px;
+    background-color: #ffffff;
+}
+
+.satisfaction-text {
+    font-size: 20px;
+    color: #007bff;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* --- FOOTER PROFESSIONNEL --- */
+.mon-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.mon-footer p {
+    margin: 0;
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+.footer-liens {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.footer-liens a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-liens a:hover {
+    color: #007bff;
+}
+
+/* Adaptation pour les écrans de PC (Footer en ligne) */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Réinitialisation de base pour éviter les marges de l'écran */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Style de l'en-tête (Header) */
+.site-header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Barre de navigation (Par défaut : Ordinateur / Grands écrans) */
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-end; /* Aligne le menu à droite sur PC */
+    align-items: center;
+}
+
+/* Liste des liens */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Espace régulier entre chaque lien */
+}
+
+/* Style des liens */
+.nav-links a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Effet au survol */
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Petit soulignement dynamique au survol */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ========================================================== */
+/* RESPONSIVE DESIGN : ADAPTATION AUX ÉCRANS MOBILES & TABLETTES */
+/* ========================================================== */
+
+/* Pour les tablettes et les petits écrans (en dessous de 768px de large) */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center; /* Centre le menu sur tablette/mobile */
+        padding: 15px 15px;
+    }
+
+    .nav-links {
+        gap: 20px; /* Réduit un peu l'espace entre les liens */
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+}
+
+/* Pour les très petits téléphones (en dessous de 480px de large) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 10px;
+    }
+
+    .nav-links {
+        gap: 15px; /* Resserre les liens pour éviter qu'ils ne débordent */
+    }
+
+    .nav-links a {
+        font-size: 14px; /* Texte légèrement plus petit pour s'adapter aux petits mobiles */
+    }
+}
